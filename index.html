@@ -7,8 +7,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
     <title>IA Knowledgebase</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Infinity Arc Knowledge Base available to the public">
+    <meta name="author" content="Cliff Crerar">
 
     <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -31,6 +31,12 @@
 
 <body>
 
+  <nav>
+    
+  </nav>
+  <main>
+
+  </main>
     <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
@@ -40,15 +46,11 @@
             <div class="one-half column" style="margin-top: 5%">
                 <img style="height: 200px; margin-left: -50px" src="public/images/ia.png" alt="ialogo" />
                 <h1>Knowledge Base</h1>
-                <small>Technical Knowledge base shared library.</small>
+                <small>Technical shared library.</small>
             </div>
             <div class="one-half column" style="margin-top: 5%">
                 <h4>INDEX</h4>
-                <ul>
-                    <li>
-                        <a href="Diagrams/Azure-api-call.html">Azure API diagram</a>
-                    </li>
-                </ul>
+                <ul id="indexList"></ul>
             </div>
         </div>
     </div>
@@ -59,6 +61,36 @@
 
     <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <script src="./node_modules/lit-html/polyfills/template_polyfill.js"></script> -->
+  <script type="module">
+    import {html, render} from './node_modules/lit-html/lit-html.js';
+    const listContainer = document.getElementById('indexList');
+
+    var links = [{
+      file: 'Authentication-Flow.html',
+      caption: 'Authtentication Flow Diagram'
+    },{
+      file: 'Azure-api-call.html',
+      caption: 'Azure Data Access API Good Practice'
+    }]
+
+    function template(link, caption) {
+      return html`
+            <li>
+                <a href="Diagrams/${link}">${caption}</a>
+            </li>
+      `
+    }
+
+    const linksHtml = links.map(({file,caption}) => template(file,caption));
+
+    console.log(linksHtml);
+
+    render(
+      linksHtml
+      ,listContainer
+    )
+  </script>
 </body>
 
 </html>

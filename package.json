@@ -1,0 +1,23 @@
+{
+  "name": "ia-knowledge-base",
+  "version": "1.0.0",
+  "description": "Tecnhical Knowlegde base",
+  "main": "index.html",
+  "dependencies": {
+    "lit-html": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infinity-arc/knowledge-base.git"
+  },
+  "author": "Cliff Crerar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/infinity-arc/knowledge-base/issues"
+  },
+  "homepage": "https://github.com/infinity-arc/knowledge-base#readme"
+}
