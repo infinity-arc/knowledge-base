@@ -3,93 +3,76 @@
 
 <head>
 
-    <!-- Basic Page Needs
+  <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta charset="utf-8">
-    <title>IA Knowledgebase</title>
-    <meta name="description" content="Infinity Arc Knowledge Base available to the public">
-    <meta name="author" content="Cliff Crerar">
+  <meta charset="utf-8">
+  <title>IA Knowledgebase</title>
+  <meta name="description" content="Infinity Arc Knowledge Base available to the public">
+  <meta name="author" content="Cliff Crerar">
 
-    <!-- Mobile Specific Metas
+  <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- FONT
+  <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-    <!-- CSS
+  <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="public/css/normalize.css">
-    <link rel="stylesheet" href="public/css/skeleton.css">
+  <link rel="stylesheet" href="public/css/normalize.css">
+  <link rel="stylesheet" href="public/css/skeleton.css">
+  <link href="/public/css/style.css" rel="stylesheet">
 
-    <!-- Favicon
+  <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
 
 <body>
 
-  <nav>
-    
-  </nav>
   <main>
 
   </main>
-    <!-- Primary Page Layout
+  <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="container">
+  <div class="container">
 
-        <div class="row">
+    <div class="row">
 
-            <div class="one-half column" style="margin-top: 5%">
-                <img style="height: 200px; margin-left: -50px" src="public/images/ia.png" alt="ialogo" />
-                <h1>Knowledge Base</h1>
-                <small>Technical shared library.</small>
-            </div>
-            <div class="one-half column" style="margin-top: 5%">
-                <h4>INDEX</h4>
-                <ul id="indexList"></ul>
-            </div>
-        </div>
+      <div class="one-half column" style="margin-top: 5%">
+        <img style="height: 200px; margin-left: -50px" src="public/images/ia.png" alt="ialogo" />
+        <h1>Knowledge Base</h1>
+        <small>Technical shared library.</small>
+      </div>
+      <div class="one-half column" style="margin-top: 5%">
+        <h4>INDEX</h4>
+        <ul id="indexList"></ul>
+      </div>
     </div>
+  </div>
 
-    <div class="container">
+  <div class="container">
 
-    </div>
+  </div>
 
-    <!-- End Document
+  <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <script src="./node_modules/lit-html/polyfills/template_polyfill.js"></script> -->
-  <script type="module">
-    import {html, render} from './node_modules/lit-html/lit-html.js';
-    const listContainer = document.getElementById('indexList');
 
-    var links = [{
-      file: 'Authentication-Flow.html',
-      caption: 'Authtentication Flow Diagram'
-    },{
-      file: 'Azure-api-call.html',
-      caption: 'Azure Data Access API Good Practice'
-    }]
-
-    function template(link, caption) {
-      return html`
-            <li>
-                <a href="Diagrams/${link}">${caption}</a>
-            </li>
-      `
-    }
-
-    const linksHtml = links.map(({file,caption}) => template(file,caption));
-
-    console.log(linksHtml);
-
-    render(
-      linksHtml
-      ,listContainer
-    )
+  <script src="public/js/start.js"></script>
+  <script>
+    const
+      links = [{
+        file: 'Authentication-Flow.html',
+        caption: 'Authtentication Flow Diagram'
+      }, {
+        file: 'Azure-api-call.html',
+        caption: 'Azure Data Access API Good Practice'
+      }],
+      listContainer = document.getElementById('indexList'),
+      template = (link, caption) => `<li><a href="Diagrams/${link}">${caption}</a></li>`.trim();
+    listContainer.innerHTML = links.map(({ file, caption }) => template(file, caption)).join('');
   </script>
 </body>
 

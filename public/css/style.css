@@ -3,11 +3,26 @@
 }
 
 html, body {
-    padding: none;
-    margin: none;
+    padding: 0 !important;
+    margin: 0 !important;
     height: auto;
     width: 100vw;
     min-width: 100vh;
+}
+
+img.brand {
+    display: block;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.nav-back-button{
+    outline: 0;
+    border-radius: 50%;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
 }
 
 main{
@@ -15,13 +30,20 @@ main{
     margin: auto;
 }
 
-main div {
-    /* margin: auto; */
-    /* position: absolute !important;
+main .diagram-container {
+    margin: auto;
+    position: absolute !important;
     left: 50%;
-    transform: translateX(-50%); */
+    transform: translateX(-50%);
 }
 
-.mxgraph {
-    margin:auto !important;
+nav {
+    margin: 0;
+    padding: 10px;
+    background: black;
+}
+
+.nav-inner{
+    display: flex;
+    align-items: center;
 }
